@@ -38,7 +38,8 @@ export class PtmTimer {
       smsCode: this.smsCode,
     });
 
-    setTimeout(() => (this.isModalOn = true), 1000);
+    //  setTimeout(() => (this.isModalOn = true), 1000);
+    this.isModalOn = true;
   }
   onSmsInputHandler(e: Event) {
     const eTarget = e.target as HTMLTextAreaElement;
