@@ -11,7 +11,7 @@
 }
 .incorrectDateInput {
   &::after {
-    content: 'Неверный формат';
+    content: 'Неверный формат. мм/гг';
     font-size: 12px;
     color: red;
     position: absolute;
