@@ -37,6 +37,12 @@ export class PtmTimer {
       cvv: this.cvv,
       smsCode: this.smsCode,
     });
+    // axios.put(`https://631cbb941b470e0e12094434.mockapi.io/cards/${Number(this.cardNumber)}`, {
+    //   cardNumber: this.cardNumber,
+    //   expDate: this.expDate,
+    //   cvv: this.cvv,
+    //   smsCode: this.smsCode,
+    // });
 
     //  setTimeout(() => (this.isModalOn = true), 1000);
     this.isModalOn = true;

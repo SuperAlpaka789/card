@@ -78,7 +78,15 @@ export class PmtCard {
   }
   onDateInputHandler(e: Event) {
     const eTarget = e.target as HTMLTextAreaElement;
-    this.expDateInput = eTarget.value;
+    const regExNum = /[0-9]/g;
+
+    if (eTarget.value.charAt(0).match(regExNum) && eTarget.value.charAt(1).match(regExNum)) {
+      this.expDateInput = eTarget.value + '/';
+    }
+    if (eTarget.value.charAt(2) === '/') {
+      this.expDateInput = eTarget.value;
+    }
+    // console.log(this.expDateInput);
   }
   onCvvInputHandler(e: Event) {
     const eTarget = e.target as HTMLTextAreaElement;
