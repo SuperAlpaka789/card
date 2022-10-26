@@ -208,7 +208,7 @@ export class PmtCard {
                     </div>
                   </div>
                   <div class="sc-dxgOiQ hZcWTU" id="InvoiceInfoView-Amount">
-                    6,091.05 ₽
+                    10.00 ${/* ₽ */}
                   </div>
                   <div class="sc-gqjmRU eEUcXg">
                     <div class="sc-VigVT bJZLvQ" id="CommissionInfo-Card">
